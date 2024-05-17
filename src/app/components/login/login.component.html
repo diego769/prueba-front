@@ -1,0 +1,16 @@
+<div class="login-container">
+    <mat-card>
+      <mat-card-title>Login</mat-card-title>
+      <form [formGroup]="ingresoForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Rut Sostenedor</mat-label>
+          <input matInput formControlName="rutSostenedor" required>
+          <mat-error *ngIf="ingresoForm.controls['rutSostenedor'].invalid">
+            Rut sostenedor es requerido.
+          </mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="ingresoForm.invalid">Login</button>
+      </form>
+    </mat-card>
+  </div>
